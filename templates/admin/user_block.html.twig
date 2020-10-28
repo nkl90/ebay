@@ -1,0 +1,9 @@
+{% block user_block %}
+    <div class="user-wrapper">
+        <p>Вы вошли как: <a href="{{ path('admin_app_user_edit', {'id': app.user.id}) }}">{{ app.user.username }}</a></p>
+        <p>Роли:
+        {{ renderUserRoles()|raw }}
+        </p>
+        <a href="{{ path('app_logout') }}">Выход</a>
+    </div>
+{% endblock %}

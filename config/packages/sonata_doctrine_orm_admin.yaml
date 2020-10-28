@@ -1,0 +1,7 @@
+# config/sonata_doctrine_orm_admin.yaml
+
+sonata_doctrine_orm_admin:
+    templates:
+        types:
+            list:
+                img: 'form/type/list_img.html.twig'
