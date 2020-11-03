@@ -10,3 +10,10 @@ app_logout:
     path: /security/logout
     methods: GET
     #controller: App\Controller\SecurityController::logout
+
+app_registration:
+    path: /registration
+    controller:  App\Controller\RegistrationController::Registration
+app_regvalid:
+    path: /regvalid
+    controller:  App\Controller\RegistrationController::valid
