@@ -23,8 +23,15 @@ class UserFixtures extends Fixture
             ->setRoles([
             RoleEnumType::ROLE_SUPER_ADMIN
         ]);
-            
+            $user = $this->prepareObject();
+            $user
+            ->setEmail('user@mail.ru')
+            ->setRoles([
+                RoleEnumType::ROLE_USER
+            ]);
         $manager->persist($admin);
+        $manager->flush();
+        $manager->persist($user);
         $manager->flush();
     }
     

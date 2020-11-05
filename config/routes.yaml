@@ -17,3 +17,15 @@ app_registration:
 app_regvalid:
     path: /regvalid
     controller:  App\Controller\RegistrationController::valid
+
+app_cabinet:
+    path: /cabinet
+    controller:  App\Controller\UserController::cabinet
+
+app_goods:
+    path: /cabinet/addgoods
+    controller:  App\Controller\UserController::addgoods
+
+app_mygoods:
+    path: /cabinet/mygoods
+    controller:  App\Controller\UserController::mygoods

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+<form method="post">
+    
+	
+    <h1 class="h3 mb-3 font-weight-normal">Добавить Товар</h1>
+    <label for="goods">Название товара</label>
+    <input type="text" value="" name="goodsname" id="goods" class="form-control" required autofocus>
+    <br>
+    <label for="price">Введите Цену</label>
+    <input type="text" name="goodsprice" id="price" class="form-control" required>
+     <br>
+    <label for="memo">Описание товара</label>
+    <textarea name="password" id="memo" class="form-control" required></textarea>
+ 	
+
+   
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Confirm
+    </button>
+    <br>
+    <br>
+<a href={{ path('app_cabinet') }}> На Главную </a>
+</form>
+{% endblock %}

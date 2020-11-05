@@ -93,14 +93,18 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
-    {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
-            return new RedirectResponse($targetPath);
-        }
+    {    
+        if ($this->security->isGranted('ROLE_USER') && !$this->security->isGranted('ROLE_ADMIN'))
+            return new RedirectResponse('/cabinet');
         
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) 
+            return new RedirectResponse($targetPath);
+                              
         if($this->security->isGranted('ROLE_ADMIN'))
             return new RedirectResponse($this->urlGenerator->generate('sonata_admin_dashboard'));
-            
+           else 
+              
+       
         return new RedirectResponse('index');
     }
 
