@@ -3,18 +3,18 @@
 {% block title %}Registration{% endblock %}
 
 {% block body %}
-<form method="post">
+<form method="post" action={{ path('app_reggoods') }}>
     
 	
     <h1 class="h3 mb-3 font-weight-normal">Добавить Товар</h1>
-    <label for="goods">Название товара</label>
+    <label for="goodsname">Название товара</label>
     <input type="text" value="" name="goodsname" id="goods" class="form-control" required autofocus>
     <br>
-    <label for="price">Введите Цену</label>
+    <label for="goodsprice">Введите Цену</label>
     <input type="text" name="goodsprice" id="price" class="form-control" required>
      <br>
     <label for="memo">Описание товара</label>
-    <textarea name="password" id="memo" class="form-control" required></textarea>
+    <textarea name="memos" id="memo" class="form-control" required></textarea>
  	
 
    

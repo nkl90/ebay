@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ goodsname }}{% endblock %}
+
+{% block body %}
+<form method="post">
+    <h1 class="h3 mb-3 font-weight-normal">{{ goodsname }}</h1>
+    <br>
+  Price:  {{ Price }}        
+         <br>
+  Description:{{ Description }}
+  <br>
+<a href={{ path('app_cabinet') }}> На Главную </a>
+</form>
+{% endblock %}

@@ -1,13 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Registration{% endblock %}
+{% block title %}Мои Товары{% endblock %}
 
 {% block body %}
 <form method="post">
-    
-	
     <h1 class="h3 mb-3 font-weight-normal">Мои Товары</h1>
-   
+    {% if goodsid is defined%}
+    {%  for num in range (0, cicle-1) %}
+   <a href={{ path ('app_showgoods', {'gid':goodsid[num]} ) }}>{{goodsreference[num]}}</a>
+   <br>
+  {% endfor %}
+  {% endif %}
+  
+        
+        
+  
 <a href={{ path('app_cabinet') }}> На Главную </a>
 </form>
 {% endblock %}

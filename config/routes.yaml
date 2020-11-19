@@ -29,3 +29,12 @@ app_goods:
 app_mygoods:
     path: /cabinet/mygoods
     controller:  App\Controller\UserController::mygoods
+
+app_reggoods:
+    path: /cabinet/addgoods/check
+    controller:  App\Controller\UserController::reggoods
+
+app_showgoods:
+    path: /cabinet/showgoods
+    controller:  App\Controller\UserController::ShowGoods
+
