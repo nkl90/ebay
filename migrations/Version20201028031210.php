@@ -29,6 +29,6 @@ final class Version20201028031210 extends AbstractMigration
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE users');
-        $this->addSql2('DROP TABLE Goods');
+        $this->addSql2('DROP TABLE goods');
     }
 }
