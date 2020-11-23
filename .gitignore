@@ -11,3 +11,10 @@
 /public/uploads/explications/*
 !/public/uploads/explications/.gitignore
 
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
