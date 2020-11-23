@@ -63,11 +63,13 @@ Class UserController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
         $goodsname=array();
         $goodsid=array();
+        $goodsdesc=array();
         $num=5;
     $this->entityManager=$entityManager;
     $rsm= New ResultSetMapping();
     $rsm->addScalarResult('GoodsName', 'GoodsName');
     $rsm->addScalarResult('gid', 'gid');
+    $rsm->addScalarResult('Description', 'Description');
     $uid=$this->getUid($authenticationUtils, $entityManager);
     $query = $entityManager->createNativeQuery('
     SELECT *
@@ -85,16 +87,17 @@ Class UserController extends AbstractController
             {
             array_push($goodsid,$goods[$linksgoods]['gid']);
             array_push($goodsname,$goods[$linksgoods]['GoodsName']);
+            array_push($goodsdesc,$goods[$linksgoods]['Description']);
             echo '<br>';
             }
         }
     $cicle=count($goodsname);
     $total = intval(((count($goods) - 1) / 5) + 1);
     $nav=$this->page_navigation(count($goods),'mygoods');
-    return  $this->render('goods/mygoods.html.twig',['goodsreference' => $goodsname,'cicle'=>$cicle,'goodsid'=>$goodsid]);
+    return  $this->render('Cabinet/index.html.twig',['goodsname' => $goodsname,'Description'=>$goodsdesc,'goodsid'=>$goodsid,'CurrentPage'=>'My goods']);
     }
     else 
-        return $this->render('goods/mygoods.html.twig');
+        return $this->render('Cabinet/index.html.twig',['CurrentPage'=>'My goods']);
     }
 
     public function reggoods(AuthenticationUtils $authenticationUtils,  EntityManagerInterface $entityManager)
